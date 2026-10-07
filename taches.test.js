@@ -3,7 +3,7 @@ import { ajouterTache, supprimerTache, compterTaches } from './taches.js'
 
 test('ajoute une tâche à la liste', () => {
   const liste = ajouterTache([], 'Lire')
-  expect(liste.length).toBe(9)
+  expect(liste.length).toBe(1)
   expect(liste[0].titre).toBe('Lire')
 })
 
@@ -15,5 +15,5 @@ test('supprime une tâche', () => {
 
 test('compte les tâches', () => {
   const liste = ajouterTache([], 'Lire')
-  expect(compterTaches(liste)).toBe(9)
+  expect(compterTaches(liste)).toBe(1)
 })
