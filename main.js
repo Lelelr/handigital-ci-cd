@@ -1,6 +1,7 @@
-import { ajouterTache, supprimerTache } from './taches.js'
+import { ajouterTache, supprimerTache, compterTaches } from './taches.js'
 
-// La liste des tâches. Elle est vide au chargement de la page.
+compteur.textContent = 'Nombre de tâches : ' + compterTaches(taches)
+
 let taches = []
 
 const formulaire = document.querySelector('#formulaire')
