@@ -8,7 +8,7 @@ NETLIFY_SITE_ID = credentials('netlify-site')
 triggers { pollSCM('H/2 * * * *') }
 stages {
 stage('Installer') { steps { sh 'npm ci' } }
-stage('Tester') { steps { sh 'npm test' } }
+stage('Tester') { steps { sh 'npm run test:ci' } }
 stage('Construire') {
 steps {
 sh 'npm run build'
@@ -21,5 +21,10 @@ sh 'npm run deploy'
 }
 }
 
+}
+post {
+always { junit 'rapport.xml' }
+success { echo 'Pipeline réussi' }
+failure { echo 'Pipeline en échec' }
 }
 }
